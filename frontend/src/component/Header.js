@@ -1,5 +1,5 @@
 import React from "react";
-
+import { LinkContainer } from "react-router-bootstrap"
 import { IoMdCart } from "react-icons/io";
 import { FaUserCircle } from "react-icons/fa"
 
@@ -9,18 +9,24 @@ const Header = () => {
     <header>
       <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
         <Container>
-          <Navbar.Brand href="#home">PROSHOP</Navbar.Brand>
+          <LinkContainer to="/">
+            <Navbar.Brand >PROSHOP</Navbar.Brand>
+          </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
-              <Nav.Link href="/cart">
-                <IoMdCart size="1.3em" style={{ marginRight: 3 }} />
+              <LinkContainer to="/cart">
+                <Nav.Link >
+                  <IoMdCart size="1.3em" style={{ marginRight: 3 }} />
               Cart
               </Nav.Link>
-              <Nav.Link href="/login">
-                <FaUserCircle size="1.3em" style={{ marginRight: 3 }} />
+              </LinkContainer>
+              <LinkContainer to="/login">
+                <Nav.Link >
+                  <FaUserCircle size="1.3em" style={{ marginRight: 3 }} />
                 Sign In
               </Nav.Link>
+              </LinkContainer>
             </Nav>
           </Navbar.Collapse>
         </Container>
